@@ -1,30 +1,64 @@
 🤖 WorkFlowGen: Agentic AI Analyst
 
-WorkFlowGen is a full-stack Agentic RAG (Retrieval Augmented Generation) platform designed to intelligently analyze, summarize, and extract insights from documents.
-
-Unlike traditional chatbots, WorkFlowGen uses a Semantic Router powered by Google Gemini 2.0 Flash to understand user intent (QA vs. Summarization) and routes requests to specialized agents using LangGraph.
-
 <div align="center">
+
+A Full-Stack Agentic RAG Platform for Intelligent Document Analysis
+
+<p align="center">
+<a href="#-key-features">Key Features</a> •
+<a href="#-tech-stack">Tech Stack</a> •
+<a href="#-architecture">Architecture</a> •
+<a href="#-local-installation-guide">Installation</a> •
+<a href="#-how-to-use">Usage</a>
+</p>
 
 </div>
 
+WorkFlowGen moves beyond traditional chatbots by implementing a Semantic Router powered by Google Gemini 2.0 Flash. It intelligently classifies user intent (QA vs. Summarization) and routes requests to specialized agents using a LangGraph State Machine.
+
 🚀 Key Features
 
-🧠 Agentic Workflow: Replaces linear logic with a LangGraph State Machine.
+Feature
 
-Router Agent: Uses structured output (JSON) to semantically classify user intent.
+Description
 
-Retriever Node: Fetches relevant context using pgvector similarity search.
+🧠 Agentic Workflow
 
-Specialized Workers: Separate agents for detailed QA and professional summarization.
+Replaces linear logic with a cyclic LangGraph state machine for decision-making.
 
-🎯 Semantic Routing: Intelligently distinguishes between "asking for help/critique" and "asking for a summary" without relying on brittle keywords.
+🎯 Semantic Routing
 
-⚡ Structured Output: Enforces strict JSON schemas on the LLM to prevent routing errors and hallucinations.
+Uses structured JSON output to distinguish between "help/critique" (QA) and "overview" (Summary) requests without brittle keywords.
 
-📄 Document Ingestion: Asynchronous pipeline for parsing and vectorizing text/PDF files.
+⚡ Structured Output
 
-📊 Modern Dashboard: Real-time UI built with Next.js 16, Tailwind CSS, and Lucide React.
+Enforces strict JSON schemas on the LLM to prevent routing errors and hallucinations.
+
+🔍 Smart Retrieval
+
+Uses pgvector for similarity search to fetch precise context from documents.
+
+📄 Async Ingestion
+
+Handles PDF/Text parsing and vectorization asynchronously using FastAPI.
+
+📊 Modern UI
+
+Real-time, responsive dashboard built with Next.js 16, Tailwind CSS, and Lucide Icons.
+
+🛠️ Tech Stack
+
+<div align="center">
+
+Frontend
+
+Backend
+
+Data & AI
+
+Deployment
+
+</div>
 
 🏗️ Architecture
 
@@ -46,49 +80,11 @@ flowchart TD
     Sum_Gen --> Output
 
 
-🛠️ Tech Stack
-
-AI & Orchestration
-
-Orchestration: LangGraph (State Machine)
-
-LLM: Google Gemini 2.0 Flash (google-generativeai)
-
-Routing: Semantic classification via Structured Generation (JSON mode)
-
-Backend
-
-Framework: FastAPI (Python 3.10+)
-
-Database: PostgreSQL 16
-
-Vector Search: pgvector
-
-ORM: SQLAlchemy (Async)
-
-Frontend
-
-Framework: Next.js 16 (App Router)
-
-Styling: Tailwind CSS
-
-State: React Hooks + Axios
-
-Deployment
-
-Frontend: Vercel
-
-Backend: Render
-
-Database: Supabase
-
 💻 Local Installation Guide
 
 Follow these steps to run the full agentic stack on your local machine.
 
 1. Prerequisites
-
-Ensure you have the following installed:
 
 Docker Desktop (For the database)
 

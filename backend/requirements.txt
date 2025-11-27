@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+asyncpg
+pgvector
+pydantic
+pydantic-settings
+python-dotenv
+openai

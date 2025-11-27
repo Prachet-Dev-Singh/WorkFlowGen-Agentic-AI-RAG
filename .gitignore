@@ -1,0 +1,12 @@
+# Ignore these folders wherever they are (Root or Subfolders)
+**/venv/
+**/node_modules/
+**/__pycache__/
+**/.next/
+**/.idea/
+**/.vscode/
+
+# Ignore sensitive keys and env files
+.env
+.env.local
+*.sqlite3

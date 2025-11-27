@@ -7,6 +7,7 @@ from app.schemas import DocumentResponse, QARequest, QAResponse
 from app.services.llm import get_embedding, get_answer
 from app.schemas import DocumentResponse, QARequest, QAResponse, SummaryRequest, SummaryResponse
 from app.services.llm import get_embedding, get_answer, get_summary
+from app.agents.graph import app as agent_app
 
 router = APIRouter()
 
@@ -99,3 +100,17 @@ async def summarize_document(request: SummaryRequest, db: AsyncSession = Depends
     summary = await get_summary(full_text)
 
     return SummaryResponse(summary=summary)
+
+# Add this to routes.py
+
+@router.post("/agent", response_model=QAResponse)
+async def run_agent(request: QARequest):
+    # 1. Run the LangGraph workflow
+    # invoke() runs the whole loop: Retrieve -> Router -> Generate
+    result = await agent_app.ainvoke({"question": request.question})
+
+    # 2. Return result
+    return QAResponse(
+        answer=result["answer"],
+        sources=["Agentic Search"] # Simplified for now
+    )

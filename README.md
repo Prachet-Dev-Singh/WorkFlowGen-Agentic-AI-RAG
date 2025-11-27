@@ -18,7 +18,7 @@
 The system follows a microservices-ready architecture:
 
 ```mermaid
-graph TD
-    A[Frontend (Next.js)] -->|HTTP/JSON| B[Backend API (FastAPI)]
-    B -->|SQL/Vectors| C[(PostgreSQL + pgvector)]
-    B -->|Embeddings & Generation| D[Google Gemini API]
+flowchart TD
+    A["Frontend (Next.js)"] -->|"HTTP/JSON"| B["Backend API (FastAPI)"]
+    B -->|"SQL/Vectors"| C[("PostgreSQL + pgvector")]
+    B -->|"Embeddings & Generation"| D["Google Gemini API"]

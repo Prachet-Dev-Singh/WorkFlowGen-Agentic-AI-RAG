@@ -11,3 +11,5 @@ google-generativeai
 langgraph
 pypdf
 python-multipart
+python-docx
+pypdf

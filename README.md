@@ -63,7 +63,9 @@ flowchart TD
 
     F --> H[Final Response]
     G --> H
+```
 
+---
 
 ## 💻 Local Installation Guide
 
@@ -85,8 +87,10 @@ Before installation, make sure you have the following:
 
 ### 📥 2. Clone the Repository
 
-git clone https://github.com/Prachet-Dev-Singh/WorkFlowGen.git  
+```bash
+git clone https://github.com/Prachet-Dev-Singh/WorkFlowGen.git
 cd WorkFlowGen
+```
 
 ---
 
@@ -94,11 +98,15 @@ cd WorkFlowGen
 
 Spin up the database container:
 
+```bash
 docker compose -f infra/docker-compose.yml up -d
+```
 
 ✅ Verify that your database is running:
 
+```bash
 docker ps
+```
 
 This launches a PostgreSQL instance with **pgvector** extension pre-installed for efficient semantic search.
 
@@ -108,21 +116,34 @@ This launches a PostgreSQL instance with **pgvector** extension pre-installed fo
 
 Navigate to the backend directory and create a virtual environment:
 
-cd backend  
-python -m venv venv  
+```bash
+cd backend
+python -m venv venv
+```
 
-Activate the environment:  
-- **Windows (Git Bash):** `source venv/Scripts/activate`  
-- **Mac/Linux:** `source venv/bin/activate`
+Activate the environment:
 
-Install dependencies:  
+```bash
+# Windows (Git Bash)
+source venv/Scripts/activate
+
+# Mac/Linux
+source venv/bin/activate
+```
+
+Install dependencies:
+
+```bash
 pip install -r requirements.txt
+```
 
 #### 🔑 Configure Environment Variables
 
 Create a `.env` file inside the `backend` folder:
 
+```bash
 touch .env
+```
 
 Paste the following and replace `YOUR_GEMINI_API_KEY_HERE`:
 
@@ -132,17 +153,20 @@ DATABASE_URL=postgresql+asyncpg://admin:password123@localhost:5432/workflowgen_d
 
 # Google Gemini API Key
 GEMINI_API_KEY=YOUR_GEMINI_API_KEY_HERE
-
-
+```
 
 #### 🗄️ Initialize the Database Schema
 
-python init_db.py  
-✅ Tables created successfully!
+```bash
+python init_db.py
+# ✅ Tables created successfully!
+```
 
 #### 🚀 Start the Backend Server
 
-uvicorn app.main:app --reload  
+```bash
+uvicorn app.main:app --reload
+```
 
 Backend runs on → **http://localhost:8000**
 
@@ -152,9 +176,11 @@ Backend runs on → **http://localhost:8000**
 
 Open a **new terminal** and navigate to the frontend directory:
 
-cd frontend  
-npm install  
-npm run dev  
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
 Frontend runs on → **http://localhost:3000**
 
@@ -175,7 +201,9 @@ Frontend runs on → **http://localhost:3000**
 
 When done, stop Docker containers safely:
 
+```bash
 docker compose -f infra/docker-compose.yml down
+```
 
 ---
 
@@ -198,15 +226,15 @@ WorkFlowGen is now fully functional on your local machine — explore, extend, a
 
 Once both servers are running:
 
-1. Open [http://localhost:3000](http://localhost:3000)
-2. Use the **Upload Panel** to add PDFs or `.txt` files.
+1. Open [http://localhost:3000](http://localhost:3000)  
+2. Use the **Upload Panel** to add PDFs or `.txt` files.  
 3. Enter natural language queries:
    - 🧠 *“Summarize this document.”* → Routed to Summary Agent  
    - 💬 *“What is the main argument of section 2?”* → Routed to QA Agent  
 4. Watch the backend logs to see:
-   - Intent classification (QA / SUMMARY)
-   - Node transitions in the LangGraph
-   - Final structured JSON response
+   - Intent classification (QA / SUMMARY)  
+   - Node transitions in the LangGraph  
+   - Final structured JSON response  
 
 ---
 
@@ -224,10 +252,12 @@ Once both servers are running:
 
 In the backend terminal, you’ll see live logs like:
 
-[Router] Intent detected: SUMMARY  
-[SummaryAgent] Fetching context from pgvector...  
-[SummaryAgent] Generating overview response...  
-[Graph] Returning final output to user.  
+```text
+[Router] Intent detected: SUMMARY
+[SummaryAgent] Fetching context from pgvector...
+[SummaryAgent] Generating overview response...
+[Graph] Returning final output to user.
+```
 
 This shows **how the LangGraph state machine routes and executes agents dynamically**.
 
@@ -240,11 +270,17 @@ If you’d like to improve **WorkFlowGen**, follow these steps:
 
 1. **Fork** the repository  
 2. **Create a feature branch:**  
-   `git checkout -b feature/your-feature`  
+   ```bash
+   git checkout -b feature/your-feature
+   ```
 3. **Commit your changes:**  
-   `git commit -m "Add your feature"`  
+   ```bash
+   git commit -m "Add your feature"
+   ```
 4. **Push to your branch:**  
-   `git push origin feature/your-feature`  
+   ```bash
+   git push origin feature/your-feature
+   ```
 5. **Open a Pull Request** 🎉  
 
 ---
@@ -267,4 +303,3 @@ You are free to use, modify, and distribute this software as long as you include
 > © 2025 WorkFlowGen — Developed with ❤️ by [Prachet Singh](https://github.com/Prachet-Dev-Singh)
 
 ---
-

@@ -50,21 +50,20 @@ The system follows a **cyclic graph architecture** rather than a linear chain:
 
 ```mermaid
 flowchart TD
-    User[User Input] --> API[FastAPI Endpoint]
-    API --> Graph{LangGraph Workflow}
-    
-    subgraph "Agent Brain"
-    Graph --> Retriever[🔍 Retriever Node]
-    Retriever -->|Context + Query| Router[🚦 Semantic Router]
-    
-    Router -->|Intent: QA| QA_Gen[💡 QA Generator]
-    Router -->|Intent: SUMMARY| Sum_Gen[📝 Summary Generator]
-    end
-    
-    QA_Gen --> Output[Final Response]
-    Sum_Gen --> Output
+    A[User Input] --> B[FastAPI Endpoint]
+    B --> C{LangGraph Workflow}
 
----
+    subgraph Agent_Brain [Agent Brain]
+        C --> D[Retriever Node]
+        D --> E[Semantic Router]
+
+        E -->|Intent: QA| F[QA Generator]
+        E -->|Intent: SUMMARY| G[Summary Generator]
+    end
+
+    F --> H[Final Response]
+    G --> H
+
 
 ## 💻 Local Installation Guide
 

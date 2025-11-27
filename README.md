@@ -263,43 +263,9 @@ This shows **how the LangGraph state machine routes and executes agents dynamica
 
 ---
 
-## 🤝 Contributing
-
-We welcome all contributions! 🚀  
-If you’d like to improve **WorkFlowGen**, follow these steps:
-
-1. **Fork** the repository  
-2. **Create a feature branch:**  
-   ```bash
-   git checkout -b feature/your-feature
-   ```
-3. **Commit your changes:**  
-   ```bash
-   git commit -m "Add your feature"
-   ```
-4. **Push to your branch:**  
-   ```bash
-   git push origin feature/your-feature
-   ```
-5. **Open a Pull Request** 🎉  
-
----
-
-### 🧭 Contribution Guidelines
-
-- Write clear, concise commit messages.  
-- Keep code modular and well-documented.  
-- Use `.env.example` to guide environment setup.  
-- Run both frontend and backend locally before submitting PRs.
-
----
 
 ## 📄 License
 
 This project is licensed under the **MIT License**.  
-
-You are free to use, modify, and distribute this software as long as you include proper attribution.  
-
-> © 2025 WorkFlowGen — Developed with ❤️ by [Prachet Singh](https://github.com/Prachet-Dev-Singh)
 
 ---

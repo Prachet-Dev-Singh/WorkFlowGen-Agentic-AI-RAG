@@ -1,4 +1,4 @@
-# 🤖 WorkFlowGen: Agentic AI Analyst
+# 🤖 WorkFlowGen: Agentic AI RAG
 
 <div align="center">
 

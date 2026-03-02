@@ -1,8 +1,12 @@
-# 🤖 WorkFlowGen: Agentic AI RAG
+# 🤖 WorkFlowGen — Generative AI Document Intelligence Platform
+
+![Generative AI](https://img.shields.io/badge/Generative%20AI-LLM%20Powered-green)
+![RAG](https://img.shields.io/badge/RAG-Agentic-blue)
+![FastAPI](https://img.shields.io/badge/Backend-FastAPI-black)
 
 <div align="center">
 
-### A Full-Stack Agentic RAG Platform for Intelligent Document Analysis
+### An End-to-End Agentic RAG System for Intelligent Document Processing and Analysis
 
 <p align="center">
 <a href="#-key-features">Key Features</a> •
